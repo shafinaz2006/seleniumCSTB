@@ -52,9 +52,9 @@ public class Day1 {
 		
 		System.setProperty("webdriver.chrome.driver", driverPath);
 		driver = new ChromeDriver();
-	    driver.get(baseURL); 	    
-	    driver.manage().deleteAllCookies();
-	    driver.manage().window().maximize();
+	    	driver.get(baseURL); 	    
+	   	driver.manage().deleteAllCookies();
+	    	driver.manage().window().maximize();
 	    
 	}
 	
@@ -127,8 +127,8 @@ public class Day1 {
 
 		driver.manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
 		Actions action = new Actions(driver);
-	    action.moveToElement(driver.findElement(By.xpath("//li[contains(@id, 'menu-item')]//a[contains(text(), 'About Us')]"))).perform();
-	    driver.findElement(By.xpath("//ul[@class = 'sub-menu']//a[contains(text(), 'Contact Us')]")).click();
+	    	action.moveToElement(driver.findElement(By.xpath("//li[contains(@id, 'menu-item')]//a[contains(text(), 'About Us')]"))).perform();
+	    	driver.findElement(By.xpath("//ul[@class = 'sub-menu']//a[contains(text(), 'Contact Us')]")).click();
 			
 		expected = "https://cstb.ca/contact-us";
 		actual = driver.getCurrentUrl();
@@ -230,13 +230,13 @@ public class Day1 {
 	    
 	    //Sometimes drop down after hover over may cause exception - element not interactable. Few seconds wait works
 	    
-	    driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);  
+	    	driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);  
 	    
-	    driver.findElement(By.xpath("//ul[@class = 'sub-menu']//a[contains(text(), 'Ask a Question')]")).click();
+	    	driver.findElement(By.xpath("//ul[@class = 'sub-menu']//a[contains(text(), 'Ask a Question')]")).click();
 	    
-	    String questionText = driver.findElement(By.xpath("//div[@class = 'row']//b")).getText();
+	    	String questionText = driver.findElement(By.xpath("//div[@class = 'row']//b")).getText();
 	    
-	    Assert.assertFalse(questionText.contains("error"));
+	    	Assert.assertFalse(questionText.contains("error"));
 	    
 	}
 	
