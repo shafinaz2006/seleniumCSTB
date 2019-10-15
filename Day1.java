@@ -19,7 +19,6 @@ public class Day1 {
 
 	public WebDriver driver;
 	public WebDriverWait wait;
-	//public Actions action = new Actions(driver);
 	public String baseURL = "https://www.cstb.ca";	
 	String driverPath = "C:\\Selenium_jars\\ChromeDriver\\chromedriver.exe";
 	String expected;
@@ -90,8 +89,8 @@ public class Day1 {
 		
 		driver.manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
 		Actions action = new Actions(driver);
-		action.moveToElement(driver.findElement(By.xpath("//li[contains(@id, 'menu-item')]//a[contains(text(), 'ISTQB® Partner Program')]"))).perform();
-		driver.findElement(By.xpath("//ul[@class = 'sub-menu']//a[contains(text(), 'ISTQB® Partner Program Guidelines')]")).click();
+		action.moveToElement(driver.findElement(By.xpath("//li[contains(@id, 'menu-item')]//a[contains(text(), 'ISTQBÂ® Partner Program')]"))).perform();
+		driver.findElement(By.xpath("//ul[@class = 'sub-menu']//a[contains(text(), 'ISTQBÂ® Partner Program Guidelines')]")).click();
 			
 		expected = "https://cstb.ca/istqb-partner-program-guidelines";
 		actual = driver.getCurrentUrl();
@@ -103,7 +102,7 @@ public class Day1 {
 	public void verifyTrainingProvidersTab() {
 
 		driver.manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
-		driver.findElement(By.xpath("//a[contains(text(), 'ISTQB® Training Providers')]")).click();
+		driver.findElement(By.xpath("//a[contains(text(), 'ISTQBÂ® Training Providers')]")).click();
 			
 		expected = "https://cstb.ca/accredited-training";
 		actual = driver.getCurrentUrl();
