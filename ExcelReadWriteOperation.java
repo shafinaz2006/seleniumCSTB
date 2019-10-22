@@ -9,7 +9,7 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class ExcelTesting1 {
+public class ExcelReadWriteOperation {
 
 	public static void main(String[] args) throws IOException {
 		
