@@ -79,29 +79,29 @@ public class CSTBAboutUs {
 		
 	    	action.moveToElement(driver.findElement(By.xpath("//li[contains(@id, 'menu-item')]//a[contains(text(), 'About Us')]"))).perform();
 	    
-	    //Sometimes drop down after hover over may cause exception - element not interactable. Few seconds wait works
+	    	//Sometimes drop down after hover over may cause exception - element not interactable. Few seconds wait works
 	    
 	    	driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);  
 	    
-		   driver.findElement(By.xpath("//ul[@class = 'sub-menu']//a[contains(text(), 'Ask a Question')]")).click();
+		driver.findElement(By.xpath("//ul[@class = 'sub-menu']//a[contains(text(), 'Ask a Question')]")).click();
 	    
-	    String questionText = driver.findElement(By.xpath("//div[@class = 'row']//b")).getText();
+	    	String questionText = driver.findElement(By.xpath("//div[@class = 'row']//b")).getText();
 	    
-	    if (questionText.contains("error")) {
+	    	if (questionText.contains("error")) {
 	    	
-	    	System.out.println("This page has error: FAIL");
-	    }
-	    else {
+	    		System.out.println("This page has error: FAIL");
+	    	}
+	    	else {
 	    	
-	    	System.out.println("This page doesn't have error: PASS");
-	    }
+	    		System.out.println("This page doesn't have error: PASS");
+	    	}
 		
 	}
 	
 	private static void closeDriver(WebDriver driver) {
 		// TODO Auto-generated method stub
 		driver.close();
-	    System.out.println("End of session");
+	    	System.out.println("End of session");
 	    
 	}
 
