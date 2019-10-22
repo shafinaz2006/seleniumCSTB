@@ -17,23 +17,23 @@ public class CSTBAboutUs {
 		
 		System.setProperty("webdriver.chrome.driver", "C:\\Selenium_jars\\ChromeDriver\\chromedriver.exe");
 		
-	    WebDriver driver = new ChromeDriver();
-	    Actions action = new Actions(driver);
-	    driver.get("https://www.cstb.ca");
+	    	WebDriver driver = new ChromeDriver();
+	    	Actions action = new Actions(driver);
+	    	driver.get("https://www.cstb.ca");
 	    	    
-	    driver.manage().deleteAllCookies();
-	    
+	    	driver.manage().deleteAllCookies();
+
 	    //Clicking to 'About Us' tab - 'Ask a question' link using Actions
-	    
-	    TC_AboutUs_AskAQuestion(driver, action);
-	     
+
+	    	TC_AboutUs_AskAQuestion(driver, action);
+
 	    //Clicking to 'About Us' tab - 'Contact Us' link using Actions:
-	    
-	    TC_AboutUs_ContactUs(driver, "xyz", "xyz@abc.com", "test subject", "test message", action);
-	    
+
+	    	TC_AboutUs_ContactUs(driver, "xyz", "xyz@abc.com", "test subject", "test message", action);
+
 	    //closing Testing:
-	    
-	    closeDriver(driver);
+
+	    	closeDriver(driver);
 	    
 
 	}
@@ -44,46 +44,46 @@ public class CSTBAboutUs {
 		
 		action.moveToElement(driver.findElement(By.xpath("//li[contains(@id, 'menu-item')]//a[contains(text(), 'About Us')]"))).perform();
 	    
-	    driver.findElement(By.xpath("//ul[@class = 'sub-menu']//a[contains(text(), 'Contact Us')]")).click();
+	    	driver.findElement(By.xpath("//ul[@class = 'sub-menu']//a[contains(text(), 'Contact Us')]")).click();
 	    
-	    String address = driver.findElement(By.xpath("//div[@class = 'row']//p[2]")).getText();
+	    	String address = driver.findElement(By.xpath("//div[@class = 'row']//p[2]")).getText();
 	    
-	    String phoneInfo = driver.findElement(By.xpath("//div[@class = 'row']//p[5]")).getText();
+	    	String phoneInfo = driver.findElement(By.xpath("//div[@class = 'row']//p[5]")).getText();
 	    
-	    String personName = driver.findElement(By.xpath("//div[@class = 'row']//p[4]")).getText();
+	    	String personName = driver.findElement(By.xpath("//div[@class = 'row']//p[4]")).getText();
 	    
-	    System.out.println("Address: " + address + ", PhoneInfo: " + phoneInfo + ", Person Name: " + personName);
+	    	System.out.println("Address: " + address + ", PhoneInfo: " + phoneInfo + ", Person Name: " + personName);
 	    
-	    driver.findElement(By.xpath("//div[@class = 'row']//p[4]//a[contains(text(), 'CSTB Manager')]")).click();
+	    	driver.findElement(By.xpath("//div[@class = 'row']//p[4]//a[contains(text(), 'CSTB Manager')]")).click();
 	    
-	    driver.findElement(By.xpath("//input[@name = 'your-name']")).sendKeys(name);
+	    	driver.findElement(By.xpath("//input[@name = 'your-name']")).sendKeys(name);
 	    
-	    driver.findElement(By.xpath("//input[@name = 'your-email']")).sendKeys(email);
+		driver.findElement(By.xpath("//input[@name = 'your-email']")).sendKeys(email);
 	    
-	    driver.findElement(By.xpath("//input[@name = 'your-subject']")).sendKeys(subject);
+	    	driver.findElement(By.xpath("//input[@name = 'your-subject']")).sendKeys(subject);
 	    
-	    driver.findElement(By.xpath("//textarea[@name = 'your-message']")).sendKeys(message);
+	    	driver.findElement(By.xpath("//textarea[@name = 'your-message']")).sendKeys(message);
 	    
-	    Scanner ip = new Scanner(System.in); 
+	    	Scanner ip = new Scanner(System.in); 
 	    
-	    System.out.print("Enter the Captcha: ");
+	    	System.out.print("Enter the Captcha: ");
 		
-	    String captcha = ip.next();
+	    	String captcha = ip.next();
 		
-	    driver.findElement(By.xpath("//input[@name = 'captcha-180']")).sendKeys(captcha); 
+	    	driver.findElement(By.xpath("//input[@name = 'captcha-180']")).sendKeys(captcha); 
 	    
-	    ip.close();
+	    	ip.close();
 	}
 
 	private static void TC_AboutUs_AskAQuestion(WebDriver driver, Actions action) {
 		
-	    action.moveToElement(driver.findElement(By.xpath("//li[contains(@id, 'menu-item')]//a[contains(text(), 'About Us')]"))).perform();
+	    	action.moveToElement(driver.findElement(By.xpath("//li[contains(@id, 'menu-item')]//a[contains(text(), 'About Us')]"))).perform();
 	    
 	    //Sometimes drop down after hover over may cause exception - element not interactable. Few seconds wait works
 	    
-	    driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);  
+	    	driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);  
 	    
-	    driver.findElement(By.xpath("//ul[@class = 'sub-menu']//a[contains(text(), 'Ask a Question')]")).click();
+		   driver.findElement(By.xpath("//ul[@class = 'sub-menu']//a[contains(text(), 'Ask a Question')]")).click();
 	    
 	    String questionText = driver.findElement(By.xpath("//div[@class = 'row']//b")).getText();
 	    
