@@ -96,13 +96,13 @@ public class CSTBemailList {
 		
 		workbook.write(fos);
 	    
-		//to test is the tester is certified/not
+		//to test if the tester is certified/not
 		
 		//String testerName1 = "Mark John";
 		
-	    //Boolean testerNameDisplay = driver.findElement(By.xpath("//li[contains(text(), testerName1)]")).isDisplayed();
+	    	//Boolean testerNameDisplay = driver.findElement(By.xpath("//li[contains(text(), testerName1)]")).isDisplayed();
 	    
-	    //System.out.println("Tester is certified: " + testerNameDisplay);
+	    	//System.out.println("Tester is certified: " + testerNameDisplay);
 	   
 	    System.out.println("End of session");
 	    
